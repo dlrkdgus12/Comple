@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition name="admin-master" template="/WEB-INF/classes/views/common/template.jsp">
+		<put-attribute name="header" value="/WEB-INF/classes/views/common/header.jsp"/>
+		<put-attribute name="navi" value="/WEB-INF/classes/views/common/navi.jsp"/>
+		<put-attribute name="statusbar" value="/WEB-INF/classes/views/common/statusbar.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/classes/views/common/footer.jsp"/>
+		<put-attribute name="body" value=""/> 
+	</definition> 
+	
+	<definition name="master:*" extends="admin-master">
+		<put-attribute name="body" value="/WEB-INF/classes/views/admin/{1}.jsp"/>
+	</definition>
+	<definition name="master:*/*" extends="admin-master">
+		<put-attribute name="body" value="/WEB-INF/classes/views/admin/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="master:*/*/*" extends="admin-master">
+		<put-attribute name="body" value="/WEB-INF/classes/views/admin/{1}/{2}/{3}.jsp"/>
+	</definition>
+	
+	<definition name="admin-error" template="/WEB-INF/classes/views/error/error_view.jsp">
+	</definition>
+	
+	<definition name="admin-result" template="/WEB-INF/classes/views/common/result.jsp">
+	</definition>
+	
+	<definition name="mobile-master" template="/WEB-INF/classes/views/user/mobile/common/m_template.jsp">
+		<put-attribute name="header" value="/WEB-INF/classes/views/user/mobile/common/m_header.jsp"/>
+		<put-attribute name="body" value=""/> 
+	</definition> 
+	
+	<definition name="mobile:*@*" extends="mobile-master">
+		<put-attribute name="body" value="/WEB-INF/classes/views/user/mobile/{1}.jsp"/>
+		<put-attribute name="title" value="{3}"/>
+	</definition>
+	<definition name="mobile:*/*@*" extends="mobile-master">
+		<put-attribute name="body" value="/WEB-INF/classes/views/user/mobile/{1}/{2}.jsp"/>
+		<put-attribute name="title" value="{3}"/>
+	</definition>
+	<definition name="mobile:*/*/*@*" extends="mobile-master">
+		<put-attribute name="body" value="/WEB-INF/classes/views/user/mobile/{1}/{2}/{3}.jsp"/>
+		<put-attribute name="title" value="{3}"/>
+	</definition>
+</tiles-definitions>

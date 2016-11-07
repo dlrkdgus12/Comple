@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration      
+    PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN"      
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<properties resource="properties/db.properties"/>
+	
+	<typeAliases>
+		<typeAlias alias="linkedhashmap" type="java.util.LinkedHashMap"/>
+		<typeAlias alias="hashmap" type="java.util.HashMap"/>
+		<typeAlias alias="map" type="java.util.Map"/>
+		<typeAlias alias="list" type="java.util.List"/>
+		<typeAlias alias="string" type="java.lang.String"/>
+		<typeAlias alias="integer" type="java.lang.Integer"/>
+	</typeAliases>
+	
+	<mappers>
+	
+	 	<mapper resource="sql/UserMapper.xml"/>
+    </mappers>
+
+</configuration>
